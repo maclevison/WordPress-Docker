@@ -1,23 +1,24 @@
 # WordPress-Docker
 
-### Project config
----
+#### Project config
 
 Install Docker https://www.docker.com/get-started
 
-#### Create project directory
+**1 - Create an empty project directory**
 
 ```
-$ mkdir your-project-name
-$ cd your-project-name
+mkdir your-project-name
+cd your-project-name
 ```
- 
-Create _docker-compose.yml_ file in the root directory
+
+**2 - Create a _docker-compose.yml_ file in the root directory**
 
 ```
-$ touch docker-compose.yml
+touch docker-compose.yml
 ```
-Copy & Paste following code into _docker-compose.yml_ file.
+
+**3 - Copy & Paste following code into _docker-compose.yml_ file.**
+
 ```
 version: '3.3'
 
@@ -52,14 +53,27 @@ volumes:
   db_data:
 ```
 
-#### Running the project
+**4 - Build the project**
+
+Run following command from your project directory.
 
 ```
-$ docker-compose up -d
+docker-compose up -d
 ```  
 
-#### Shutdown the project
+**5 - Bring up WordPress in a web browser**
+
+If you are using Docker Desktop for Mac or Docker Desktop for Windows, you can use http://localhost as the IP address, and open http://localhost:9000 in a web browser.
+
+**6 - Shutdown**
 
 ```
-$ docker-compose down
+docker-compose down
 ```  
+
+**Cleanup**
+
+The command ``docker-compose down --volumes`` removes the containers, default network, and the WordPress database.
+
+---
+Learn more: https://docs.docker.com/compose/wordpress/
